@@ -6,6 +6,7 @@ const cors = require('cors');
 const authRoute = require('./routers/auth-routers');
 const productRoute = require('./routers/product-routers');
 const categoryRoute = require('./routers/category-routers');
+const path = require('path');
 
 // configure env
 dotenv.config();
@@ -16,6 +17,12 @@ const app = express();
 // middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, './client/dist')));
+
+// rest api
+app.use('*', function(req, res) {
+    res.sendFile(path.join(__dirname, './client/dist/index.html'));
+})
 
 // routes
 app.use('/api/auth', authRoute)
