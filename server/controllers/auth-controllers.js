@@ -1,7 +1,6 @@
 const User = require("../models/userModel");
 const {hashPassword, comparePassword} = require("../helpers/auth-helper");
 const JWT = require("jsonwebtoken");
-const axios = require("axios");
 
 //* //* 
 const ReviewModel = require("../models/reviewModel");
