@@ -2,9 +2,6 @@ const User = require("../models/userModel");
 const {hashPassword, comparePassword} = require("../helpers/auth-helper");
 const JWT = require("jsonwebtoken");
 
-//* //* 
-const ReviewModel = require("../models/reviewModel");
-
 const home = (req, res) => {
   try {
     res.status(200).send("This is a Home Page using Controllers");
