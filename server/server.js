@@ -17,17 +17,20 @@ const app = express();
 // middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, './client/dist')));
-
-// rest api
-app.use('*', function(req, res) {
-    res.sendFile(path.join(__dirname, './client/dist/index.html'));
-})
 
 // routes
 app.use('/api/auth', authRoute)
 app.use('/api/product', productRoute)
 app.use('/api/category', categoryRoute)
+
+// serve static files
+app.use(express.static(path.join(__dirname, './client/dist')));
+
+
+// wildcard route (for React Router)
+app.use('*', function (req, res) {
+    res.sendFile(path.join(__dirname, './client/dist/index.html'));
+  });
 
 // PORT
 const PORT = process.env.PORT || 8080;
