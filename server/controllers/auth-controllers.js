@@ -120,4 +120,4 @@ const login = async (req, res) => {
   }
 };
 
-module.exports = { home, register, login, translateReview, postReview };
+module.exports = { home, register, login };
