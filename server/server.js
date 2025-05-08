@@ -6,7 +6,7 @@ const cors = require('cors');
 const authRoute = require('./routers/auth-routers');
 const productRoute = require('./routers/product-routers');
 const categoryRoute = require('./routers/category-routers');
-const path = require('path');
+//const path = require('path');
 
 // configure env
 dotenv.config();
@@ -24,13 +24,13 @@ app.use('/api/product', productRoute)
 app.use('/api/category', categoryRoute)
 
 // serve static files
-app.use(express.static(path.join(__dirname, './client/dist')));
+//app.use(express.static(path.join(__dirname, './client/dist')));
 
 
 // wildcard route (for React Router)
-app.use('*', function (req, res) {
-    res.sendFile(path.join(__dirname, './client/dist/index.html'));
-  });
+//app.use('*', function (req, res) {
+//    res.sendFile(path.join(__dirname, './client/dist/index.html'));
+//  });
 
 // PORT
 const PORT = process.env.PORT || 8080;
