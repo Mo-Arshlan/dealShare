@@ -9,7 +9,6 @@ import Categories from './pages/Admin/Categories'
 import Users from './pages/Admin/Users'
 import Admins from './pages/Admin/Admins'
 import Register from './pages/Auth/Register'
-import Review from './pages/Review'
 import WildPage from './pages/WildPage'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -30,8 +29,6 @@ function App() {
         
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
-        {/* Review  */}
-        <Route path='/review' element={<Review/>} />
 
         <Route path='/dashboard' element={<Private />}>
           <Route path="user/profile" element={<Profile/>} />
